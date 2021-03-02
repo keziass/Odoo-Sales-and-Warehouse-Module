@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sw_wh_product,sw_wh.product,model_sw_wh_product,base.group_user,1,1,1,1
+access_sw_wh_purchase,sw_wh.purchase,model_sw_wh_purchase,base.group_user,1,1,1,1
+access_sw_wh_detail_order,sw_wh.detail_order,model_sw_wh_detail_order,base.group_user,1,1,1,1
+access_sw_wh_cycle,sw_wh.cycle,model_sw_wh_cycle,base.group_user,1,1,1,1
+access_sw_wh_vendor,sw_wh.vendor,model_sw_wh_vendor,base.group_user,1,1,1,1

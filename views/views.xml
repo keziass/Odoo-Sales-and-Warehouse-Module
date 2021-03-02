@@ -1,0 +1,87 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="sw_wh.product_list">
+      <field name="name">Product list</field>
+      <field name="model">sw_wh.product</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="product_id" />
+          <field name="name"/>
+          <field name="qty"/>
+          <field name="price" />
+          <field name="desc"/>
+          <field name="currency_id" invisible="1"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="sw_wh.product_action_window">
+      <field name="name">List Product</field>
+      <field name="res_model">sw_wh.product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="sw_wh.product_form">
+      <field name="name">Product Form</field>
+      <field name="model">sw_wh.product</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <div class="oe_title">
+                  <h5>
+                    <field name="product_id"/>
+                  </h5>
+                  <label for="name" string="Nama Product"/>
+                  <h1>
+                    <field name="name"/>
+                  </h1>
+                </div>
+            </group>
+            <group>
+              <group>
+                <field name="image" widget='image'/>
+              </group>
+              <group>
+                <field name="qty"/>
+                <field name="price"/>
+                <field name="desc"/>
+                <field name="currency_id" invisible="1"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.server" id="stock_data_alert">
+            <field name="name">Alert Stock</field>
+            <field name="model_id" ref="sw_wh.model_sw_wh_product"/>
+            <field name="state">code</field>
+            <field name="code">
+              raise Warning(model.alert_qty())</field>
+    </record>
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="sw_wh" id="swalayan__wh.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="swalayan__wh.menu_1" parent="swalayan__wh.menu_root"/>
+    <menuitem name="Menu 2" id="swalayan__wh.menu_2" parent="swalayan__wh.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="swalayan__wh.menu_1_list" parent="swalayan__wh.menu_1"
+              action="swalayan__wh.action_window"/>
+    <menuitem name="Server to list" id="swalayan__wh" parent="swalayan__wh.menu_2"
+              action="swalayan__wh.action_server"/>
+    -->
+  </data>
+</odoo>

@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="sw_wh.cycle_list">
+      <field name="name">Cycle list</field>
+      <field name="model">sw_wh.cycle</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="state"/>
+          <field name="product_id"/>
+          <field name="tanggal"/>
+          <field name="qty"/>
+          <field name="desc"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="sw_wh.cycle_action_window">
+      <field name="name">List cycle</field>
+      <field name="res_model">sw_wh.cycle</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="sw_wh.cycle_form">
+      <field name="name">Cycle Form</field>
+      <field name="model">sw_wh.cycle</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <div class="oe_title">
+                  <label for="name" string="Nama cycle"/>
+                  <h1>
+                    <field name="name"/>
+                  </h1>
+                </div>
+            </group>
+            <group>
+              <group>
+                <field name="tanggal" />
+                <field name="product_id" />
+              </group>
+              <group>
+                <field name="state"/>
+                <field name="qty"/>
+                <field name="desc"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

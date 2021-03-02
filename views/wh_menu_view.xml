@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <menuitem name="Warehouse" id="sw_wh.menu_root" web_icon="sw_wh,static/img/warehouse.png"/>
+        <!-- menu categories -->
+        <menuitem name="Product" id="sw_wh.menu_product" parent="sw_wh.menu_root"
+                  action="sw_wh.product_action_window"/>
+
+        <menuitem name="Transaction" id="sw_wh.purchase" parent="sw_wh.menu_root"
+                  action="sw_wh.purchase_order_window"/>
+
+        <menuitem name="Inventory Cycle" id="sw_wh.menu_cycle" parent="sw_wh.menu_root"
+                  action="sw_wh.cycle_action_window"/>
+       <menuitem name="Vendor" id="sw_wh.menu_vendor_done" parent="sw_wh.menu_root"
+                  action="sw_wh.vendor_action_window"/>
+
+<!--        <menuitem name="Authors" id="books.menu_authors" parent="books.menu_root"-->
+<!--                  action="books.author_window" groups="master.group_category_user_manager"/>-->
+<!--        <menuitem name="Members" id="books.menu_members" parent="books.menu_root"-->
+<!--                  action="books.member_window"/>-->
+<!--        <menuitem name="Transactions" id="books.menu_transactions" parent="books.menu_root"-->
+<!--                  action="books.transactions_window"/>-->
+    </data>
+</odoo>

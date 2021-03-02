@@ -1,2 +1,4 @@
 # Odoo-Warehouse-Module
-Configure a new module based on Odoo for Warehousing.
+Create and Configure Warehouse Module based on Odoo ERP for Company Use
+
+Odoo - https://www.odoo.com/
